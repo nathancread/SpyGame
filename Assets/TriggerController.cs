@@ -12,6 +12,7 @@ public class TriggerController : MonoBehaviour
     private bool spawnedEnemies = false;
     public GameObject hackingEffect;
     private GameObject effect;
+    private bool isHackCompleted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class TriggerController : MonoBehaviour
             //if (progress >= 1f &&this.ID == id)
             if (progressbar.GetProgressFromId(id) >= 1f)
             {
+                CompletedHack(id);
                 if (effect)
                 {
                     Destroy(effect);
@@ -71,5 +73,13 @@ public class TriggerController : MonoBehaviour
         }
 
 
+    }
+    void CompletedHack(int id)
+    {
+        if (!isHackCompleted)
+        {
+            GameEvents.current.MyHackCompleted(id);
+            isHackCompleted = true;
+        }
     }
 }

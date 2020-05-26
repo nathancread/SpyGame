@@ -14,9 +14,9 @@ public class GameEvents : MonoBehaviour
     }
 
     public event Action<int> onMyTriggerEnter;
-    //public event Action<int> onMyHackCompleted;
-
     public event Action<int> onMyTriggerExit;
+        public event Action<int> onMyHackCompleted;
+
 
     public void MyTriggerEnter(int id)
     {
@@ -33,5 +33,11 @@ public class GameEvents : MonoBehaviour
             onMyTriggerExit(id);
         }
     }
-
+    public void MyHackCompleted(int id)
+    {
+        if (onMyHackCompleted != null)
+        {
+            onMyHackCompleted(id);
+        }
+    }
 }

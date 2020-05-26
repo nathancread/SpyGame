@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    public int ID;
+
     // Start is called before the first frame update
     void Start()
     {
-        GameEvents.current.onMyTriggerEnter += OnMyTriggerOpen;
-        GameEvents.current.onMyTriggerExit += OnMyTriggerExit;
+        GameEvents.current.onMyHackCompleted += OnMyHackCompleted;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMyHackCompleted(int id)
     {
-        
+        if (id == this.ID)
+        {
+            print("time to open door");
+            gameObject.SetActive(false);
+        }
     }
 }
