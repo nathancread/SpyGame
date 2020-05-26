@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4fc88a3f82383894a9e2f49e82e94e6e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - cam: {instanceID: 0}
+  - tilemap: {instanceID: 0}
+  - teleportEffect: {fileID: 7805230638195284972, guid: a206d75090a2ce1479ebacff9ab0e654,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
